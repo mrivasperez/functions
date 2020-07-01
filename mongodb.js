@@ -16,15 +16,35 @@ MongoClient.connect(
     const db = client.db(databaseName);
 
     // insert document to users collection
-    db.collection("users").insertOne(
-      {
-        name: "Miguel",
-        age: 24,
-      },
+    // db.collection("users").insertOne(
+    //   {
+    //     name: "Miguel",
+    //     age: 24,
+    //   },
+    //   (error, result) => {
+    //     if (error) {
+    //       return console.log("Unable to insert user.");
+    //     }
+    //     console.log(result.ops);
+    //   }
+    // );
+
+    db.collection("users").insertMany(
+      [
+        {
+          name: "Andrew",
+          age: 26,
+        },
+        {
+          name: "Jenny",
+          age: 46,
+        },
+      ],
       (error, result) => {
         if (error) {
-          return console.log("Unable to insert user.");
+          return console.log("Could not add users!");
         }
+
         console.log(result.ops);
       }
     );
