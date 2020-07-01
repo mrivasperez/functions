@@ -15,19 +15,19 @@ MongoClient.connect(
 
     const db = client.db(databaseName);
 
-    // insert document to users collection
-    // db.collection("users").insertOne(
-    //   {
-    //     name: "Miguel",
-    //     age: 24,
-    //   },
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log("Unable to insert user.");
-    //     }
-    //     console.log(result.ops);
-    //   }
-    // );
+    /*
+    db.collection("users").insertOne(
+      {
+        name: "Miguel",
+        age: 24,
+      },
+      (error, result) => {
+        if (error) {
+          return console.log("Unable to insert user.");
+        }
+        console.log(result.ops);
+      }
+    );
 
     db.collection("users").insertMany(
       [
@@ -48,5 +48,7 @@ MongoClient.connect(
         console.log(result.ops);
       }
     );
+    */
+    // Challenge: Use insert many to inset the documents description, completed (boolean) 2. Setup callback to handle error or print ops 3. un the script 4. Refresh database in Robo3T and view data in tasks collection
   }
 );
