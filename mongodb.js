@@ -1,11 +1,13 @@
 // GOAL: perform crud operations in MongoDB (create, update, deleted)
 
-const 
-
 const mongodb = require("mongodb"),
-{ MongoClient, ObjectID } = require('mongodb'),
+  { MongoClient, ObjectID } = require("mongodb"),
   connectionURL = "mongodb://127.0.0.1:27017",
   databaseName = "functions";
+
+const id = new ObjectID();
+
+console.log(id);
 
 MongoClient.connect(
   connectionURL,
