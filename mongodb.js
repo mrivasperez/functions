@@ -8,6 +8,7 @@ const mongodb = require("mongodb"),
 const id = new ObjectID();
 
 console.log(id);
+console.log(id.getTimestamp());
 
 MongoClient.connect(
   connectionURL,
@@ -22,8 +23,9 @@ MongoClient.connect(
     /*
     db.collection("users").insertOne(
       {
+        _id: id,
         name: "Miguel",
-        age: 24,
+        age: 25,
       },
       (error, result) => {
         if (error) {
@@ -32,6 +34,7 @@ MongoClient.connect(
         console.log(result.ops);
       }
     );
+
 
     db.collection("users").insertMany(
       [
