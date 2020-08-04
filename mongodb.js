@@ -14,6 +14,42 @@ MongoClient.connect(
     }
     const db = client.db(databaseName);
 
+    /* 
+    DELETE DOCUMENTS 
+    
+
+    // Delete many
+    db.collection("users")
+      .deleteMany({
+        age: 26,
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+      GOAL: Remove one task from task database
+
+      1. grab description (ID)
+      2. setup call with query
+      3. use promise 
+      4. test!
+    */
+
+    //delete one
+    db.collection("tasks")
+      .deleteOne({
+        _id: new ObjectID("5efc0c2946f9a00dcc6ec42f"),
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
     // UPDATE DOCUMENTS
     /*
     CHALLENGE & GOALS: use updatemany to complete all tasks
