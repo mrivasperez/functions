@@ -39,16 +39,16 @@ MongoClient.connect(
     */
 
     //delete one
-    db.collection("tasks")
-      .deleteOne({
-        _id: new ObjectID("5efc0c2946f9a00dcc6ec42f"),
-      })
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    // db.collection("tasks")
+    //   .deleteOne({
+    //     _id: new ObjectID("5efc0c2946f9a00dcc6ec42f"),
+    //   })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
 
     // UPDATE DOCUMENTS
     /*
