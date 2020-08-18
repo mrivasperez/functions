@@ -39,18 +39,32 @@ const User = mongoose.model("User", {
       }
     },
   },
+  password: {
+    type: String,
+    required: true,
+    trim: true,
+    validate(value) {
+      if (!validator.isLength(value, { min: 6, max: undefined })) {
+        throw new Error("Your password must have a minimum of 6 characters");
+      } else if (value === "password") {
+        throw new Error("Your password cannot be password");
+      }
+    },
+  },
 });
 
-const newUser = new User({
-  name: "Catherine        Milk",
+// const newUser = new User({
+//   name: "Catherine        Milk",
 
-  email: "mrivasperez@gmail.com",
-});
+//   email: "mrivasperez@gmail.com",
+//   password: "password",
+// });
 
-newUser
-  .save()
-  .then(newUser => console.log(newUser))
-  .catch(error => console.log(error));
+// newUser
+//   .save()
+//   .then(newUser => console.log(newUser))
+//   .catch(error => console.log(error));
+
 /*  Create a new user
 
 const me = new User({
@@ -84,11 +98,23 @@ const Task = mongoose.model("Task", {
   description: {
     type: String,
     required: true,
+    trim: true,
   },
   completed: {
     type: Boolean,
+    default: false,
+    required: false,
   },
 });
+
+// const newTask = new Task({
+//   description: "A new task for today",
+// });
+
+// newTask
+//   .save()
+//   .then(newTask => console.log(newTask))
+//   .catch(error => console.log(error));
 
 // const firstTask = new Task({
 //   description: "Turn of the lights",
